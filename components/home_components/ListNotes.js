@@ -1,9 +1,14 @@
-import { View, Text } from "react-native"
+import { View, Button, ScrollView } from "react-native";
 
-export default function ListNotes() {
+export default function ListNotes({ navigation }) {
     return (
         <View>
-            <Text>Listagem das notas</Text>
+            <View>
+                <Button onPress={() => navigation.navigate('Create')} title="CRIAR NOTA"></Button>
+            </View>
+            <ScrollView>
+
+            </ScrollView>
         </View>
     )
 }
