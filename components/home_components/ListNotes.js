@@ -16,7 +16,10 @@ export default function ListNotes({ navigation }) {
             <ScrollView>
                 {
                     listNotes.map(({ id, text }, index) => (
-                        <TouchableOpacity key={index} onPress={() => openNote(id) } style={styles.myNotes}>
+                        <TouchableOpacity key={index} onPress={() => {
+                            openNote(id);
+                            navigation.navigate("Create")
+                        } } style={styles.myNotes}>
                             <Text>{ text }</Text>
                         </TouchableOpacity>
                     ))

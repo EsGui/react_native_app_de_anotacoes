@@ -6,8 +6,9 @@ export default function Logic({ children }) {
     const [textNote, setTextNote] = useState('');
 
     const openNote = (noteId) => {
-        alert(noteId)
-    } 
+        const findNote = listNotes.find((element) => Number(element.id) == Number(noteId));
+        setTextNote(findNote.text)
+    }
 
     const obj = {
         setListNotas,
