@@ -2,10 +2,14 @@ import { useState } from "react"
 import MyContext from "./MyContext"
 
 export default function Logic({ children }) {
-    const [notaCriada, setNotaCriada] = useState('');
+    const [listNotes, setListNotas] = useState([]);
+    const [textNote, setTextNote] = useState('');
 
     const obj = {
-        setNotaCriada,
+        setListNotas,
+        setTextNote,
+        textNote,
+        listNotes,
     }
 
     return (
