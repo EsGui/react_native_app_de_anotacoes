@@ -9,13 +9,18 @@ export default function Logic({ children }) {
         const findNote = listNotes.find((element) => Number(element.id) == Number(noteId));
         setTextNote(findNote.text)
     }
+    
+    const createNote = () => {
+        setTextNote("");
+    }
 
     const obj = {
         setListNotas,
         setTextNote,
         textNote,
         listNotes,
-        openNote
+        openNote,
+        createNote
     }
 
     return (

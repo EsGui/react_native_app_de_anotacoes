@@ -5,13 +5,17 @@ import MyContext from "../../contextApi/MyContext";
 export default function ListNotes({ navigation }) {
     const {
         listNotes,
-        openNote
+        openNote,
+        createNote
     } = useContext(MyContext)
 
     return (
         <View>
             <View>
-                <Button onPress={() => navigation.navigate('Create')} title="CRIAR NOTA"></Button>
+                <Button onPress={() => {
+                    createNote();
+                    navigation.navigate('Create');
+                }} title="CRIAR NOTA"></Button>
             </View>
             <ScrollView>
                 {
