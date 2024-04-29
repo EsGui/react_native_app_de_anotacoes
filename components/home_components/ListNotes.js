@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { View, Button, ScrollView, Text } from "react-native";
+import { View, Button, ScrollView, Text, StyleSheet, TouchableOpacity } from "react-native";
 import MyContext from "../../contextApi/MyContext";
 
 export default function ListNotes({ navigation }) {
     const {
-        listNotes
+        listNotes,
+        openNote
     } = useContext(MyContext)
 
     return (
@@ -14,11 +15,20 @@ export default function ListNotes({ navigation }) {
             </View>
             <ScrollView>
                 {
-                    listNotes.map(({ text }) => (
-                        <Text>{ text }</Text>
+                    listNotes.map(({ id, text }, index) => (
+                        <TouchableOpacity key={index} onPress={() => openNote(id) } style={styles.myNotes}>
+                            <Text>{ text }</Text>
+                        </TouchableOpacity>
                     ))
                 }
             </ScrollView>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    myNotes: {
+        borderWidth: 1,
+        padding: 20
+    }
+})

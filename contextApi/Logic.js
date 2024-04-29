@@ -5,11 +5,16 @@ export default function Logic({ children }) {
     const [listNotes, setListNotas] = useState([]);
     const [textNote, setTextNote] = useState('');
 
+    const openNote = (noteId) => {
+        alert(noteId)
+    } 
+
     const obj = {
         setListNotas,
         setTextNote,
         textNote,
         listNotes,
+        openNote
     }
 
     return (
