@@ -6,14 +6,16 @@ export default function ListNotes({ navigation }) {
     const {
         listNotes,
         openNote,
-        createNote
-    } = useContext(MyContext)
+        createNote,
+        setEditNote,
+    } = useContext(MyContext);
 
     return (
         <View>
             <View>
                 <Button onPress={() => {
                     createNote();
+                    setEditNote(false);
                     navigation.navigate('Create');
                 }} title="CRIAR NOTA"></Button>
             </View>
@@ -22,6 +24,7 @@ export default function ListNotes({ navigation }) {
                     listNotes.map(({ id, text }, index) => (
                         <TouchableOpacity key={index} onPress={() => {
                             openNote(id);
+                            setEditNote(true);
                             navigation.navigate("Create")
                         } } style={styles.myNotes}>
                             <Text>{ text }</Text>

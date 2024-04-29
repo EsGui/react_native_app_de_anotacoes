@@ -8,6 +8,8 @@ export default function CreateNotes({ navigation }) {
         setTextNote,
         textNote,
         listNotes,
+        editNote,
+        editNoteId,
     } = useContext(MyContext);
 
     useEffect(() => {
@@ -22,9 +24,25 @@ export default function CreateNotes({ navigation }) {
         }
     }
 
+    const editText = () => {
+        const newListNotes = listNotes.map((element) => {
+            if (Number(element.id) == Number(editNoteId)) {
+                return {
+                    ...element, text: textNote
+                }
+            }
+            return element;
+        });
+        setListNotas(newListNotes);
+        navigation.navigate("Home")
+    }
+
     return (
         <View>
-            <Button onPress={saveNote} title="Salvar"></Button>
+            {
+                editNote ? <Button onPress={editText} title="Editar"></Button>
+                : <Button onPress={saveNote} title="Salvar"></Button>
+            }
             <TextInput
                 style={styles.styleTextInput}
                 multiline={true}
