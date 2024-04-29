@@ -17,10 +17,6 @@ export default function Logic({ children }) {
         setTextNote("");
     }
 
-    const editarNote = () => {
-
-    }
-
     const obj = {
         setListNotas,
         setTextNote,
