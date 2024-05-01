@@ -12,13 +12,7 @@ As bibliotecas que utilizei foram o react navigation para fazer as navegações 
 
 Na parte de gerenciamento de estado eu utilizei o contextApi para distribuir dados entre os componentes
 
-Eu foquei mais na lógica do app, mas pretendo estiliza-la, atualizarei o Readme a medida que eu for evoluindo o projeto.
-
-Video da aplicação funcionando:
-
-[untitled.webm](https://github.com/EsGui/react_native_app_de_anotacoes/assets/91753144/760577a1-fd36-4759-9e8f-c337dc8c1b7c)
-
-Bibliotecas utilizadas
+Bibliotecas utilizadas:
 
 - React Navigation: <https://reactnavigation.org/docs/getting-started/> <br>
 - AsyncStorage: <https://docs.expo.dev/versions/latest/sdk/async-storage/>
